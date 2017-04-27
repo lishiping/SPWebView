@@ -1,0 +1,36 @@
+<html>
+<head>
+	<title>webDemo</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <style type="text/css">
+        a{
+            font-size:12px;
+            color:red;
+            display:flex;
+            width:33%;
+            height:50px;
+            line-height:50;
+            float:left;
+            text-align:center;
+        }
+    </style>
+<script type="text/javascript">
+   function nativeFounction() {
+       var obj = { 'message' : 'Hello OC,I am JS!', 'numbers' : [ 1, 2, 3 ] ,'orderId':'123456','price':'50','URL':'https://www.baidu.com'};
+       window.NativeBridge('fetchMessage',obj)
+   }
+    function showUIFuction(){
+       window.NativeBridge('showJSData')
+    }
+    function callFromOC(value) {
+       alert(value)
+    }
+</script>
+</head>
+<body>
+    <button onClick="nativeFounction()" style="">Buy Goods</button>
+    <button onClick="showUIFuction()" style="">Show JSData</button>
+    
+</body>
+
+</html>
