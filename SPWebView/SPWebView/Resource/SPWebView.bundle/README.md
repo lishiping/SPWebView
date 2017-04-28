@@ -7,7 +7,7 @@ SPWebView is a code implementation based on OC WebView lightweight components, t
 
 SPWebView 是一个基于OC代码实现的WebView轻量级组件,将UIWebView和WKWebView的API封装成统一的类去使用,并且在加载网页的时候提供进度条,同时简化JS与OC互相调用及传递数据的方式。在原作者CHWebView的基础上增加了仿微信界面
 
-![image](https://github.com/lishiping/SPWebView/master/Resource/WebView.gif)
+![image](https://github.com/lishiping/SPWebView/blob/master/SPWebView/Resource/WebView.gif)
 
 # Features(功能)
 * You can use UIWebView or WKWebView as usual.
@@ -33,7 +33,7 @@ pod 'SPWebView'
 
 # SPWebView init初始化
 ``` obj-c
-    CHWebView *webView = [[CHWebView alloc]initWithFrame:rect];
+    SPWebView *webView = [[SPWebView alloc]initWithFrame:rect];
     [webView loadRequest:self.request];
     webView.delegate = self;
     [self.view addSubview:webView];
@@ -90,7 +90,7 @@ JS代码的实现,在js的函数中通过使用NativeBridge这样一个对象(we
 
 # SPWebView Design(SPWebView设计图)
 
-<img src="https://github.com/lishiping/CHWebView/master/Resource/CHWebView.png"  title="CHWebView设计图">
+<img src="https://github.com/lishiping/SPWebView/blob/master/SPWebView/Resource/CHWebView.png"  title="SPWebView设计图">
 
 # author blog Address(本作者博客地址)
 https://github.com/lishiping/SPWebView

@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
   s.name         = "SPWebView"
-  s.version      = "0.0.9"
+  s.version      = "0.0.10"
   s.summary      = "WeChat WebView component,JS To OC,微信浏览器WebView,简化JS与OC互相调用及传递数据的方式"
   s.homepage     = "https://github.com/lishiping/SPWebView.git"
   s.license      = "LICENSE"
