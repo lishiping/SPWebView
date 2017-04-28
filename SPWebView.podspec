@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
   s.name         = "SPWebView"
-  s.version      = "0.0.7"
+  s.version      = "0.0.8"
   s.summary      = "WeChat WebView component,JS To OC,微信浏览器WebView,简化JS与OC互相调用及传递数据的方式"
   s.homepage     = "https://github.com/lishiping/SPWebView.git"
   s.license      = "LICENSE"
@@ -26,7 +26,7 @@ Pod::Spec.new do |s|
    end
 
    s.subspec 'Core' do |c|
-   c.dependency     "SPWebView/LSP/SPWebView/Progress"
+   c.dependency     "SPWebView/Progress"
    c.source_files = "SPWebView/LSP/SPWebView/Core/*.{h,m,mm,cpp,c}"
    c.public_header_files = 'SPWebView/LSP/SPWebView/Core/*.h'
    end  
