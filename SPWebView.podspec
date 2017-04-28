@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
   s.name         = "SPWebView"
-  s.version      = "0.0.3"
+  s.version      = "0.0.4"
   s.summary      = "WeChat WebView component,JS To OC,微信浏览器WebView,简化JS与OC互相调用及传递数据的方式"
   s.homepage     = "https://github.com/lishiping/SPWebView.git"
   s.license      = "LICENSE"
@@ -10,12 +10,23 @@ Pod::Spec.new do |s|
   s.source       = { :git => "https://github.com/lishiping/SPWebView.git",
                      :tag => s.version}
 
-  s.source_files = 'SPWebView/LSP/SPWebView/Core/*.{h,m,mm,cpp,c}',
+  #s.source_files = 'SPWebView/LSP/SPWebView/Core/*.{h,m,mm,cpp,c}',
                    'SPWebView/LSP/SPWebView/Progress/*.{h,m,mm,cpp,c}'
 
-  s.public_header_files = 'SPWebView/LSP/SPWebView/Core/*.h',
+  #s.public_header_files = 'SPWebView/LSP/SPWebView/Core/*.h',
                           'SPWebView/LSP/SPWebView/Progress/*.h'
  
+
+   s.default_subspecs = "Core","Progress"
+   s.subspec 'Core' do |c|
+   c.source_files = "SPWebView/LSP/SPWebView/Core"
+   c.dependency     "SPWebView/LSP/SPWebView/Progress"
+   end
+
+   s.subspec 'Progress' do |p|
+   p.source_files = "SPWebView/LSP/SPWebView/Progress"
+  end
+
   s.resources = "SPWebView/LSP/SPWebView/Resource/SPWebView.bundle"
 
   s.frameworks = 'WebKit', 'JavaScriptCore'
