@@ -63,7 +63,8 @@ typedef NS_ENUM(NSInteger, SPWebViewNavigationType) {
 
 /*! @abstract The web delegate. */
 @property ( nonatomic, weak) id <SPWebViewDelegate> delegate;
-@property ( nonatomic, readonly, copy) NSURL *url;
+@property ( nonatomic, readonly, copy) NSURL *URL;
+@property ( nonatomic, readonly, strong) NSURLRequest *request;
 @property ( nonatomic, readonly, copy) NSString *title;
 @property ( nonatomic, readonly) UIView *webView;// defult is WKWebView ,WKWebView have't cache ,you can choose UIWebView before ViewDidLoad.
 @property ( nonatomic, readonly) BOOL canGoBack;//web.canGoBack
@@ -83,7 +84,7 @@ typedef NS_ENUM(NSInteger, SPWebViewNavigationType) {
 /*! @abstract  requested urlString.*/
 - (void)loadURLString:(NSString *)urlString;
 /*! @abstract  requested URL.*/
-- (void)loadURL:(NSURL *)url;
+- (void)loadURL:(NSURL *)URL;
 /*! @abstract  requested URL. map NSURLRequest*/
 - (void)loadRequest:(NSURLRequest *)request;
 

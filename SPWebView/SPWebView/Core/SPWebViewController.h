@@ -21,8 +21,6 @@
 
 @interface SPWebViewController : UIViewController
 
-@property (nonatomic, strong) NSURL *url;
-
 @property (nonatomic, strong) UIColor *titleColor;//titleColor,navigationBar.tintColor
 
 @property (nonatomic,strong) UIColor* progressViewColor;
@@ -44,7 +42,7 @@
  * @brief load local html file（加载本地文件路径）
  */
 - (instancetype)initWithFilePath:(NSString *)urlString;
-
+- (instancetype)initWithURL:(NSURL *)URL;
 
 /*************************JS to OC*************************/
 

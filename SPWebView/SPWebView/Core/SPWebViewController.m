@@ -29,7 +29,7 @@
 @property (nonatomic, strong) SPWebView *webView;
 
 @property (nonatomic ,assign) BOOL isFile;
-@property (nonatomic ,strong) NSURLRequest *req;
+@property (nonatomic, copy)   NSURL *URL;
 @property (nonatomic ,assign) BOOL hiddenNavtionBar;
 @end
 
@@ -38,28 +38,37 @@
 #pragma mark - init
 - (instancetype)initWithURLString:(NSString *)urlString
 {
-    if (self = [super init]) {
-        _url = [NSURL URLWithString:urlString];
-        _isHiddenProgressView = NO;
-        _isUseWeChatStyle = YES;
+    if (self = [self init]) {
+        _URL = [NSURL URLWithString:urlString];
         _isFile = NO;
-        _progressViewColor = [UIColor colorWithRed:119.0/255 green:228.0/255 blue:115.0/255 alpha:1];
     }
     return self;
 }
 
 - (instancetype)initWithFilePath:(NSString *)urlString{
-    if (self = [super init]) {
-        _url = [NSURL fileURLWithPath:urlString];
-        _isHiddenProgressView = NO;
-        _isUseWeChatStyle = YES;
-        _isFile = YES;
-        _progressViewColor = [UIColor colorWithRed:119.0/255 green:228.0/255 blue:115.0/255 alpha:1];
-        
+    
+    if (self = [self init]) {
+        _URL = [NSURL fileURLWithPath:urlString];
+        _isFile = YES;        
     }
     return self;
 }
 
+-(instancetype)initWithURL:(NSURL *)URL
+{
+    _URL = URL;
+    return [self init];
+}
+
+-(instancetype)init
+{
+    if (self = [super init]) {
+        _isUseWeChatStyle = YES;
+        _isHiddenProgressView = NO;
+        _progressViewColor = [UIColor colorWithRed:119.0/255 green:228.0/255 blue:115.0/255 alpha:1];
+    }
+    return self;
+}
 
 #pragma mark - life cycle
 - (void)viewDidLoad {
@@ -72,9 +81,6 @@
     if (_isHiddenProgressView&&_progressView) {
         [_progressView removeFromSuperview];
     }
-    //    self.navigationController.navigationBarHidden = [self isNavigationHidden];
-    //    self.automaticallyAdjustsScrollViewInsets = ![self isNavigationHidden];
-    
 }
 
 - (void)viewDidAppear:(BOOL)animated{
@@ -97,7 +103,7 @@
     
     if (_isUseWeChatStyle && !self.navigationController.navigationBarHidden) {
         NSBundle *bundle = [SPWebView bundleForName:@"SPWebView"];
-        NSString *url =  [NSBundle pathForResource:@"spnavbarperfect" ofType:@"png" inDirectory:bundle.bundlePath];
+        NSString *url =  [NSBundle pathForResource:@"spnavbarperfect@2x" ofType:@"png" inDirectory:bundle.bundlePath];
         UIImage *image = [UIImage imageWithContentsOfFile:url];
         
         [self.navigationController.navigationBar setBackgroundImage:image
@@ -116,7 +122,7 @@
     [self updateNavigationItems];
     
     [self.view addSubview:self.webView];
-    [self.webView loadURL:_url];
+    [self.webView loadURL:_URL];
     
     if (!_isHiddenProgressView) {
         [self.webView addSubview:self.progressView];
@@ -128,12 +134,6 @@
 -(void)setProgressViewColor:(UIColor *)progressViewColor{
     _progressViewColor = progressViewColor;
     self.progressView.progressColor = progressViewColor;
-}
-- (NSURLRequest *)req{
-    if (!_req) {
-        _req = [NSURLRequest requestWithURL:self.url];
-    }
-    return _req;
 }
 
 -(SPWebView*)webView

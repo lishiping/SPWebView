@@ -12,17 +12,16 @@
 		E1025B9E1EB0DB21007CF292 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E1025B9C1EB0DB21007CF292 /* Main.storyboard */; };
 		E1025BA01EB0DB21007CF292 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E1025B9F1EB0DB21007CF292 /* Assets.xcassets */; };
 		E1025BA31EB0DB21007CF292 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E1025BA11EB0DB21007CF292 /* LaunchScreen.storyboard */; };
-		E1377B191EB1DBF5008BC1A1 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = E1377B001EB1DBF5008BC1A1 /* README.md */; };
-		E1377B1A1EB1DBF5008BC1A1 /* CHWebView.png in Resources */ = {isa = PBXBuildFile; fileRef = E1377B021EB1DBF5008BC1A1 /* CHWebView.png */; };
-		E1377B1B1EB1DBF5008BC1A1 /* WebView.gif in Resources */ = {isa = PBXBuildFile; fileRef = E1377B031EB1DBF5008BC1A1 /* WebView.gif */; };
-		E1377B1D1EB1DBF5008BC1A1 /* SPWebVCDemo.m in Sources */ = {isa = PBXBuildFile; fileRef = E1377B091EB1DBF5008BC1A1 /* SPWebVCDemo.m */; };
-		E1377B1E1EB1DBF5008BC1A1 /* SPWebView.m in Sources */ = {isa = PBXBuildFile; fileRef = E1377B0B1EB1DBF5008BC1A1 /* SPWebView.m */; };
-		E1377B1F1EB1DBF5008BC1A1 /* SPWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E1377B0D1EB1DBF5008BC1A1 /* SPWebViewController.m */; };
-		E1377B201EB1DBF5008BC1A1 /* NJKWebViewProgress.m in Sources */ = {isa = PBXBuildFile; fileRef = E1377B101EB1DBF5008BC1A1 /* NJKWebViewProgress.m */; };
-		E1377B211EB1DBF5008BC1A1 /* NJKWebViewProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = E1377B121EB1DBF5008BC1A1 /* NJKWebViewProgressView.m */; };
-		E1377B221EB1DBF5008BC1A1 /* SPWebView.bundle in Resources */ = {isa = PBXBuildFile; fileRef = E1377B141EB1DBF5008BC1A1 /* SPWebView.bundle */; };
-		E1377B241EB1DBF5008BC1A1 /* WebViewDemo.html in Resources */ = {isa = PBXBuildFile; fileRef = E1377B171EB1DBF5008BC1A1 /* WebViewDemo.html */; };
-		E1377B271EB1E010008BC1A1 /* SPWebListDemo.m in Sources */ = {isa = PBXBuildFile; fileRef = E1377B261EB1E010008BC1A1 /* SPWebListDemo.m */; };
+		E124206B1EB3057100DB2837 /* CHWebView.png in Resources */ = {isa = PBXBuildFile; fileRef = E12420571EB3057100DB2837 /* CHWebView.png */; };
+		E124206C1EB3057100DB2837 /* WebView.gif in Resources */ = {isa = PBXBuildFile; fileRef = E12420581EB3057100DB2837 /* WebView.gif */; };
+		E124206D1EB3057100DB2837 /* SPWebListDemo.m in Sources */ = {isa = PBXBuildFile; fileRef = E124205C1EB3057100DB2837 /* SPWebListDemo.m */; };
+		E124206E1EB3057100DB2837 /* SPWebVCDemo.m in Sources */ = {isa = PBXBuildFile; fileRef = E124205E1EB3057100DB2837 /* SPWebVCDemo.m */; };
+		E124206F1EB3057100DB2837 /* SPWebView.m in Sources */ = {isa = PBXBuildFile; fileRef = E12420601EB3057100DB2837 /* SPWebView.m */; };
+		E12420701EB3057100DB2837 /* SPWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E12420621EB3057100DB2837 /* SPWebViewController.m */; };
+		E12420711EB3057100DB2837 /* NJKWebViewProgress.m in Sources */ = {isa = PBXBuildFile; fileRef = E12420651EB3057100DB2837 /* NJKWebViewProgress.m */; };
+		E12420721EB3057100DB2837 /* NJKWebViewProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = E12420671EB3057100DB2837 /* NJKWebViewProgressView.m */; };
+		E12420731EB3057100DB2837 /* SPWebView.bundle in Resources */ = {isa = PBXBuildFile; fileRef = E12420691EB3057100DB2837 /* SPWebView.bundle */; };
+		E12420751EB3249B00DB2837 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = E12420741EB3249B00DB2837 /* README.md */; };
 		E1377B2D1EB1E18E008BC1A1 /* HomeVC.m in Sources */ = {isa = PBXBuildFile; fileRef = E1377B2C1EB1E18E008BC1A1 /* HomeVC.m */; };
 /* End PBXBuildFile section */
 
@@ -35,23 +34,22 @@
 		E1025B9F1EB0DB21007CF292 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E1025BA21EB0DB21007CF292 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E1025BA41EB0DB21007CF292 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		E1377B001EB1DBF5008BC1A1 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
-		E1377B021EB1DBF5008BC1A1 /* CHWebView.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CHWebView.png; sourceTree = "<group>"; };
-		E1377B031EB1DBF5008BC1A1 /* WebView.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = WebView.gif; sourceTree = "<group>"; };
-		E1377B081EB1DBF5008BC1A1 /* SPWebVCDemo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPWebVCDemo.h; sourceTree = "<group>"; };
-		E1377B091EB1DBF5008BC1A1 /* SPWebVCDemo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPWebVCDemo.m; sourceTree = "<group>"; };
-		E1377B0A1EB1DBF5008BC1A1 /* SPWebView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPWebView.h; sourceTree = "<group>"; };
-		E1377B0B1EB1DBF5008BC1A1 /* SPWebView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPWebView.m; sourceTree = "<group>"; };
-		E1377B0C1EB1DBF5008BC1A1 /* SPWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPWebViewController.h; sourceTree = "<group>"; };
-		E1377B0D1EB1DBF5008BC1A1 /* SPWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPWebViewController.m; sourceTree = "<group>"; };
-		E1377B0F1EB1DBF5008BC1A1 /* NJKWebViewProgress.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJKWebViewProgress.h; sourceTree = "<group>"; };
-		E1377B101EB1DBF5008BC1A1 /* NJKWebViewProgress.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJKWebViewProgress.m; sourceTree = "<group>"; };
-		E1377B111EB1DBF5008BC1A1 /* NJKWebViewProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJKWebViewProgressView.h; sourceTree = "<group>"; };
-		E1377B121EB1DBF5008BC1A1 /* NJKWebViewProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJKWebViewProgressView.m; sourceTree = "<group>"; };
-		E1377B141EB1DBF5008BC1A1 /* SPWebView.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = SPWebView.bundle; sourceTree = "<group>"; };
-		E1377B171EB1DBF5008BC1A1 /* WebViewDemo.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = WebViewDemo.html; sourceTree = "<group>"; };
-		E1377B251EB1E010008BC1A1 /* SPWebListDemo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPWebListDemo.h; sourceTree = "<group>"; };
-		E1377B261EB1E010008BC1A1 /* SPWebListDemo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPWebListDemo.m; sourceTree = "<group>"; };
+		E12420571EB3057100DB2837 /* CHWebView.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CHWebView.png; sourceTree = "<group>"; };
+		E12420581EB3057100DB2837 /* WebView.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = WebView.gif; sourceTree = "<group>"; };
+		E124205B1EB3057100DB2837 /* SPWebListDemo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPWebListDemo.h; sourceTree = "<group>"; };
+		E124205C1EB3057100DB2837 /* SPWebListDemo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPWebListDemo.m; sourceTree = "<group>"; };
+		E124205D1EB3057100DB2837 /* SPWebVCDemo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPWebVCDemo.h; sourceTree = "<group>"; };
+		E124205E1EB3057100DB2837 /* SPWebVCDemo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPWebVCDemo.m; sourceTree = "<group>"; };
+		E124205F1EB3057100DB2837 /* SPWebView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPWebView.h; sourceTree = "<group>"; };
+		E12420601EB3057100DB2837 /* SPWebView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPWebView.m; sourceTree = "<group>"; };
+		E12420611EB3057100DB2837 /* SPWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPWebViewController.h; sourceTree = "<group>"; };
+		E12420621EB3057100DB2837 /* SPWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPWebViewController.m; sourceTree = "<group>"; };
+		E12420641EB3057100DB2837 /* NJKWebViewProgress.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJKWebViewProgress.h; sourceTree = "<group>"; };
+		E12420651EB3057100DB2837 /* NJKWebViewProgress.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJKWebViewProgress.m; sourceTree = "<group>"; };
+		E12420661EB3057100DB2837 /* NJKWebViewProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJKWebViewProgressView.h; sourceTree = "<group>"; };
+		E12420671EB3057100DB2837 /* NJKWebViewProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJKWebViewProgressView.m; sourceTree = "<group>"; };
+		E12420691EB3057100DB2837 /* SPWebView.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = SPWebView.bundle; sourceTree = "<group>"; };
+		E12420741EB3249B00DB2837 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		E1377B2B1EB1E18E008BC1A1 /* HomeVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeVC.h; sourceTree = "<group>"; };
 		E1377B2C1EB1E18E008BC1A1 /* HomeVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeVC.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -70,6 +68,7 @@
 		E1025B871EB0DB21007CF292 = {
 			isa = PBXGroup;
 			children = (
+				E12420741EB3249B00DB2837 /* README.md */,
 				E1025B921EB0DB21007CF292 /* SPWebView */,
 				E1025B911EB0DB21007CF292 /* Products */,
 			);
@@ -86,7 +85,8 @@
 		E1025B921EB0DB21007CF292 /* SPWebView */ = {
 			isa = PBXGroup;
 			children = (
-				E1377AFD1EB1DBF5008BC1A1 /* LSP */,
+				E12420561EB3057100DB2837 /* Resource */,
+				E12420591EB3057100DB2837 /* SPWebView */,
 				E1025B961EB0DB21007CF292 /* AppDelegate.h */,
 				E1025B971EB0DB21007CF292 /* AppDelegate.m */,
 				E1377B2B1EB1E18E008BC1A1 /* HomeVC.h */,
@@ -108,66 +108,55 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		E1377AFD1EB1DBF5008BC1A1 /* LSP */ = {
+		E12420561EB3057100DB2837 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
-				E1377B001EB1DBF5008BC1A1 /* README.md */,
-				E1377B011EB1DBF5008BC1A1 /* Resource */,
-				E1377B061EB1DBF5008BC1A1 /* SPWebView */,
-				E1377B171EB1DBF5008BC1A1 /* WebViewDemo.html */,
-			);
-			path = LSP;
-			sourceTree = "<group>";
-		};
-		E1377B011EB1DBF5008BC1A1 /* Resource */ = {
-			isa = PBXGroup;
-			children = (
-				E1377B021EB1DBF5008BC1A1 /* CHWebView.png */,
-				E1377B031EB1DBF5008BC1A1 /* WebView.gif */,
+				E12420571EB3057100DB2837 /* CHWebView.png */,
+				E12420581EB3057100DB2837 /* WebView.gif */,
 			);
 			path = Resource;
 			sourceTree = "<group>";
 		};
-		E1377B061EB1DBF5008BC1A1 /* SPWebView */ = {
+		E12420591EB3057100DB2837 /* SPWebView */ = {
 			isa = PBXGroup;
 			children = (
-				E1377B071EB1DBF5008BC1A1 /* Core */,
-				E1377B0E1EB1DBF5008BC1A1 /* Progress */,
-				E1377B131EB1DBF5008BC1A1 /* Resource */,
+				E124205A1EB3057100DB2837 /* Core */,
+				E12420631EB3057100DB2837 /* Progress */,
+				E12420681EB3057100DB2837 /* Resource */,
 			);
 			path = SPWebView;
 			sourceTree = "<group>";
 		};
-		E1377B071EB1DBF5008BC1A1 /* Core */ = {
+		E124205A1EB3057100DB2837 /* Core */ = {
 			isa = PBXGroup;
 			children = (
-				E1377B251EB1E010008BC1A1 /* SPWebListDemo.h */,
-				E1377B261EB1E010008BC1A1 /* SPWebListDemo.m */,
-				E1377B081EB1DBF5008BC1A1 /* SPWebVCDemo.h */,
-				E1377B091EB1DBF5008BC1A1 /* SPWebVCDemo.m */,
-				E1377B0A1EB1DBF5008BC1A1 /* SPWebView.h */,
-				E1377B0B1EB1DBF5008BC1A1 /* SPWebView.m */,
-				E1377B0C1EB1DBF5008BC1A1 /* SPWebViewController.h */,
-				E1377B0D1EB1DBF5008BC1A1 /* SPWebViewController.m */,
+				E124205B1EB3057100DB2837 /* SPWebListDemo.h */,
+				E124205C1EB3057100DB2837 /* SPWebListDemo.m */,
+				E124205D1EB3057100DB2837 /* SPWebVCDemo.h */,
+				E124205E1EB3057100DB2837 /* SPWebVCDemo.m */,
+				E124205F1EB3057100DB2837 /* SPWebView.h */,
+				E12420601EB3057100DB2837 /* SPWebView.m */,
+				E12420611EB3057100DB2837 /* SPWebViewController.h */,
+				E12420621EB3057100DB2837 /* SPWebViewController.m */,
 			);
 			path = Core;
 			sourceTree = "<group>";
 		};
-		E1377B0E1EB1DBF5008BC1A1 /* Progress */ = {
+		E12420631EB3057100DB2837 /* Progress */ = {
 			isa = PBXGroup;
 			children = (
-				E1377B0F1EB1DBF5008BC1A1 /* NJKWebViewProgress.h */,
-				E1377B101EB1DBF5008BC1A1 /* NJKWebViewProgress.m */,
-				E1377B111EB1DBF5008BC1A1 /* NJKWebViewProgressView.h */,
-				E1377B121EB1DBF5008BC1A1 /* NJKWebViewProgressView.m */,
+				E12420641EB3057100DB2837 /* NJKWebViewProgress.h */,
+				E12420651EB3057100DB2837 /* NJKWebViewProgress.m */,
+				E12420661EB3057100DB2837 /* NJKWebViewProgressView.h */,
+				E12420671EB3057100DB2837 /* NJKWebViewProgressView.m */,
 			);
 			path = Progress;
 			sourceTree = "<group>";
 		};
-		E1377B131EB1DBF5008BC1A1 /* Resource */ = {
+		E12420681EB3057100DB2837 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
-				E1377B141EB1DBF5008BC1A1 /* SPWebView.bundle */,
+				E12420691EB3057100DB2837 /* SPWebView.bundle */,
 			);
 			path = Resource;
 			sourceTree = "<group>";
@@ -231,12 +220,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E1377B221EB1DBF5008BC1A1 /* SPWebView.bundle in Resources */,
-				E1377B1B1EB1DBF5008BC1A1 /* WebView.gif in Resources */,
-				E1377B1A1EB1DBF5008BC1A1 /* CHWebView.png in Resources */,
+				E12420731EB3057100DB2837 /* SPWebView.bundle in Resources */,
+				E124206C1EB3057100DB2837 /* WebView.gif in Resources */,
+				E124206B1EB3057100DB2837 /* CHWebView.png in Resources */,
 				E1025BA31EB0DB21007CF292 /* LaunchScreen.storyboard in Resources */,
 				E1025BA01EB0DB21007CF292 /* Assets.xcassets in Resources */,
-				E1377B241EB1DBF5008BC1A1 /* WebViewDemo.html in Resources */,
 				E1025B9E1EB0DB21007CF292 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -248,15 +236,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E1377B201EB1DBF5008BC1A1 /* NJKWebViewProgress.m in Sources */,
-				E1377B1F1EB1DBF5008BC1A1 /* SPWebViewController.m in Sources */,
-				E1377B211EB1DBF5008BC1A1 /* NJKWebViewProgressView.m in Sources */,
+				E12420701EB3057100DB2837 /* SPWebViewController.m in Sources */,
+				E12420721EB3057100DB2837 /* NJKWebViewProgressView.m in Sources */,
+				E12420751EB3249B00DB2837 /* README.md in Sources */,
+				E124206D1EB3057100DB2837 /* SPWebListDemo.m in Sources */,
 				E1025B981EB0DB21007CF292 /* AppDelegate.m in Sources */,
+				E124206F1EB3057100DB2837 /* SPWebView.m in Sources */,
 				E1377B2D1EB1E18E008BC1A1 /* HomeVC.m in Sources */,
-				E1377B1E1EB1DBF5008BC1A1 /* SPWebView.m in Sources */,
-				E1377B271EB1E010008BC1A1 /* SPWebListDemo.m in Sources */,
-				E1377B1D1EB1DBF5008BC1A1 /* SPWebVCDemo.m in Sources */,
-				E1377B191EB1DBF5008BC1A1 /* README.md in Sources */,
+				E124206E1EB3057100DB2837 /* SPWebVCDemo.m in Sources */,
+				E12420711EB3057100DB2837 /* NJKWebViewProgress.m in Sources */,
 				E1025B951EB0DB21007CF292 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

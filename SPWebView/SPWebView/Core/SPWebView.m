@@ -87,10 +87,9 @@
     [self loadRequest:rquest];
 }
 
-- (void)loadURL:(NSURL *)url
+- (void)loadURL:(NSURL *)URL
 {
-    _url = url;
-    NSURLRequest *rquest = [NSURLRequest requestWithURL:url];
+    NSURLRequest *rquest = [NSURLRequest requestWithURL:URL];
     [self loadRequest:rquest];
 }
 
@@ -99,7 +98,7 @@
     
     //[(UIWebView*)_webView loadRequest:request];
     //[(WKWebView*)_webView loadRequest:request];
-    
+    _request = request;
     //使用此种方法的原因是先检测是否可以调用该方法，防止调用崩溃
     SEL selector = NSSelectorFromString(@"loadRequest:");
     if ([_webView respondsToSelector:selector]) {

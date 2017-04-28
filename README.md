@@ -7,7 +7,7 @@ SPWebView is a code implementation based on OC WebView lightweight components, t
 
 SPWebView 是一个基于OC代码实现的WebView轻量级组件,将UIWebView和WKWebView的API封装成统一的类去使用,并且在加载网页的时候提供进度条,同时简化JS与OC互相调用及传递数据的方式。在原作者CHWebView的基础上增加了仿微信界面
 
-![image](https://github.com/lishiping/SPWebView/master/LSP/Resource/WebView.gif)
+![image](https://github.com/lishiping/SPWebView/master/Resource/WebView.gif)
 
 # Features(功能)
 * You can use UIWebView or WKWebView as usual.
@@ -90,7 +90,7 @@ JS代码的实现,在js的函数中通过使用NativeBridge这样一个对象(we
 
 # SPWebView Design(SPWebView设计图)
 
-<img src="https://github.com/lishiping/CHWebView/master/LSP/Resource/CHWebView.png"  title="CHWebView设计图">
+<img src="https://github.com/lishiping/CHWebView/master/Resource/CHWebView.png"  title="CHWebView设计图">
 
 # author blog Address(本作者博客地址)
 https://github.com/lishiping/SPWebView

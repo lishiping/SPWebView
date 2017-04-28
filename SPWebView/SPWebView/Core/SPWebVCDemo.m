@@ -22,16 +22,26 @@
 
 - (void)viewDidLoad{
     [super viewDidLoad];
+    
+    NSBundle *bundle = [SPWebView bundleForName:@"SPWebView"];
+    NSString *url =  [NSBundle pathForResource:@"sppointIcon@2x" ofType:@"png" inDirectory:bundle.bundlePath];
+    UIImage *image = [UIImage imageWithContentsOfFile:url];
+
     UIButton *callJS = [UIButton buttonWithType:UIButtonTypeCustom];
-    callJS.frame = CGRectMake(10, 100, 80, 100);
-    [callJS setTitle:@"CallJS" forState:UIControlStateNormal];
+    callJS.frame = CGRectMake(0, 0, 22, 44);
+    [callJS setImage:image forState:UIControlStateNormal];
     [callJS addTarget:self action:@selector(callJS) forControlEvents:UIControlEventTouchUpInside];
     UIBarButtonItem *right = [[UIBarButtonItem alloc]initWithCustomView:callJS];
     self.navigationItem.rightBarButtonItem = right;
 }
 
 - (void)callJS{
+    //OC 调用JS代码，OC以字符串的形式向JS注入JS方法
     [self invokeJavaScript:@"callFromOC('I am iOS,OC invoke JS')"];
+    
+//    [self.webView loadURLString:@"https://www.baidu.com"];
+//    [self.webView reload];
+//    [self.webView goBack];
 }
 
 //JS invoke OC Code (JS调用OC代码)
@@ -41,7 +51,7 @@
 - (NSArray<NSString *> *)registerJavascriptName{
     return @[@"fetchMessage",@"showJSData"];
 }
-
+//fetchMessage 要与上面数组返回字符串名字对应
 - (void)fetchMessage:(NSDictionary *)dic{
     UIAlertController *alert = [UIAlertController alertControllerWithTitle:nil message:[NSString stringWithFormat:@"I got message from js about =%@",dic] preferredStyle:UIAlertControllerStyleAlert];
     [alert addAction:[UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
@@ -52,7 +62,6 @@
 - (void)showJSData{
     UIAlertController *alert = [UIAlertController alertControllerWithTitle:nil message:[NSString stringWithFormat:@"Show Function"] preferredStyle:UIAlertControllerStyleAlert];
     [alert addAction:[UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-        
     }]];
     [self presentViewController:alert animated:YES completion:NULL];
 }

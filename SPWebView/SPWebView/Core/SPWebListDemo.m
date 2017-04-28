@@ -17,6 +17,7 @@
 
 #import "SPWebListDemo.h"
 #import "SPWebVCDemo.h"
+#import "SPWebView.h"
 
 @interface SPWebListDemo ()<UITableViewDelegate,UITableViewDataSource>
 
@@ -78,7 +79,10 @@
         } break;
             
         case 2:{
-            SPWebVCDemo *web = [[SPWebVCDemo alloc]initWithFilePath:[[NSBundle mainBundle] pathForResource:@"WebViewDemo" ofType:@"html"]];
+            
+            NSBundle *bundle = [SPWebView bundleForName:@"SPWebView"];
+            NSString *url =  [NSBundle pathForResource:@"WebViewDemo" ofType:@"html" inDirectory:bundle.bundlePath];
+            SPWebVCDemo *web = [[SPWebVCDemo alloc]initWithFilePath:url];
             [self.navigationController pushViewController:web animated:YES];
         } break;
             
@@ -86,7 +90,9 @@
             
             //example: similar to SPWebVCDemo, inherit SPWebViewController, pay equal attention to write registerJavascriptName method, join registered JSname, and realization method of the registration
             //使用例子：类似于SPWebVCDemo，继承SPWebViewController，并重写registerJavascriptName方法，加入注册的JSName，并实现注册的方法
-            SPWebVCDemo *web = [[SPWebVCDemo alloc]initWithFilePath:[[NSBundle mainBundle] pathForResource:@"WebViewDemo" ofType:@"html"]];
+            NSBundle *bundle = [SPWebView bundleForName:@"SPWebView"];
+            NSString *url =  [NSBundle pathForResource:@"WebViewDemo" ofType:@"html" inDirectory:bundle.bundlePath];
+            SPWebVCDemo *web = [[SPWebVCDemo alloc]initWithFilePath:url];
             web.useUIWebView = YES;
             web.isHiddenProgressView = YES;
             web.titleColor = [UIColor whiteColor];
