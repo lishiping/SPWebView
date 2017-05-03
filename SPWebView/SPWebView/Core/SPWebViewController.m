@@ -56,8 +56,10 @@
 
 -(instancetype)initWithURL:(NSURL *)URL
 {
-    _URL = URL;
-    return [self init];
+    if (self =[self init]) {
+        _URL = URL;
+    }
+    return self;
 }
 
 -(instancetype)init
@@ -233,9 +235,9 @@
     [self.progressView setProgress:progress animated:YES];
 }
 
-- (void)webView:(SPWebView *)webView withError:(NSError *)error{
-    
-}
+//- (void)webView:(SPWebView *)webView withError:(NSError *)error{
+//    
+//}
 
 - (void)webViewDidFinshLoad:(SPWebView *)webView{
     if (webView.title.length >0) {
@@ -283,9 +285,6 @@
 #pragma makr Private
 - (BOOL)isNavigationHidden{
     return self.navigationController.navigationBar.hidden;
-//    return !self.navigationController
-//    || !self.navigationController.navigationBar.isTranslucent
-//    || !self.navigationController.navigationBar;
 }
 
 

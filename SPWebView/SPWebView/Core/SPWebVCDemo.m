@@ -17,6 +17,10 @@
 
 #import "SPWebVCDemo.h"
 
+@interface SPWebVCDemo ()<SPWebViewDelegate>
+
+@end
+
 @implementation SPWebVCDemo
 
 
@@ -35,6 +39,13 @@
     self.navigationItem.rightBarButtonItem = right;
 }
 
+#pragma mark - WebViewDelegate
+
+- (void)webView:(SPWebView *)webView withError:(NSError *)error{
+    
+}
+
+#pragma mark - 
 - (void)callJS{
     //OC 调用JS代码，OC以字符串的形式向JS注入JS方法
     [self invokeJavaScript:@"callFromOC('I am iOS,OC invoke JS')"];
