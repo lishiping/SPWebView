@@ -6,7 +6,6 @@
 //
 
 #import <Foundation/Foundation.h>
-#import <UIKit/UIKit.h>
 
 #undef njk_weak
 #if __has_feature(objc_arc_weak)
@@ -22,7 +21,7 @@ extern const float NJKFinalProgressValue;
 typedef void (^NJKWebViewProgressBlock)(float progress);
 @protocol NJKWebViewProgressDelegate;
 @interface NJKWebViewProgress : NSObject<UIWebViewDelegate>
-@property (nonatomic, weak) id<NJKWebViewProgressDelegate>progressDelegate;
+@property (nonatomic, njk_weak) id<NJKWebViewProgressDelegate>progressDelegate;
 @property (nonatomic, njk_weak) id<UIWebViewDelegate>webViewProxyDelegate;
 @property (nonatomic, copy) NJKWebViewProgressBlock progressBlock;
 @property (nonatomic, readonly) float progress; // 0.0..1.0

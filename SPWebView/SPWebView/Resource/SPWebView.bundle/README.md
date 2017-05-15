@@ -1,5 +1,5 @@
 
-//原作者github地址(https://github.com/chausson/CHWebView)
+//  实现思路参照CHWebView,感谢作者Chausson开源,在作者原有基础上优化更新,使用NJKWebViewProgress,感谢作者开源
 
 # SPWebView
 

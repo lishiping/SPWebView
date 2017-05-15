@@ -26,30 +26,20 @@
 
 -(void)configureViews
 {
-    if (nil == self.progressColor) {
-        self.progressColor = [UIColor redColor];
-    }
     self.userInteractionEnabled = NO;
     self.autoresizingMask = UIViewAutoresizingFlexibleWidth;
     _progressBarView = [[UIView alloc] initWithFrame:self.bounds];
     _progressBarView.autoresizingMask = UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleHeight;
-    //UIColor *tintColor = [UIColor colorWithRed:22.f / 255.f green:126.f / 255.f blue:251.f / 255.f alpha:1.0]; // iOS7 Safari bar color
-    //UIColor* tintColor = [UIColor colorWithHue:0 saturation:0 brightness:0 alpha:0.4];
-    UIColor* tintColor = self.progressColor;
-//    if ([UIApplication.sharedApplication.delegate.window respondsToSelector:@selector(setTintColor:)] && UIApplication.sharedApplication.delegate.window.tintColor) {
-//        tintColor = UIApplication.sharedApplication.delegate.window.tintColor;
-//    }
+    UIColor *tintColor = [UIColor colorWithRed:22.f / 255.f green:126.f / 255.f blue:251.f / 255.f alpha:1.0]; // iOS7 Safari bar color
+    if ([UIApplication.sharedApplication.delegate.window respondsToSelector:@selector(setTintColor:)] && UIApplication.sharedApplication.delegate.window.tintColor) {
+        tintColor = UIApplication.sharedApplication.delegate.window.tintColor;
+    }
     _progressBarView.backgroundColor = tintColor;
     [self addSubview:_progressBarView];
     
     _barAnimationDuration = 0.27f;
     _fadeAnimationDuration = 0.27f;
     _fadeOutDelay = 0.1f;
-}
-
--(void)setProgressColor:(UIColor *)progressColor{
-    _progressColor = progressColor;
-    _progressBarView.backgroundColor = progressColor;
 }
 
 -(void)setProgress:(float)progress

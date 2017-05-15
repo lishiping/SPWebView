@@ -18,6 +18,8 @@
 #import "SPWebViewController.h"
 #import "NJKWebViewProgress.h"
 #import "NJKWebViewProgressView.h"
+#import "UIViewController+LSPErrorView.h"
+
 @interface SPWebViewController ()<SPWebViewDelegate>
 
 @property (nonatomic,strong)UIBarButtonItem* customBackBarItem;
@@ -135,7 +137,7 @@
 #pragma mark - setter & getter method
 -(void)setProgressViewColor:(UIColor *)progressViewColor{
     _progressViewColor = progressViewColor;
-    self.progressView.progressColor = progressViewColor;
+    self.progressView.progressBarView.backgroundColor = progressViewColor;
 }
 
 -(SPWebView*)webView
@@ -159,7 +161,7 @@
         
         _progressView = [[NJKWebViewProgressView alloc]initWithFrame:CGRectMake(0,0, self.view.frame.size.width, 3)];
         if(_progressViewColor){
-            _progressView.progressColor = _progressViewColor;
+            _progressView.progressBarView.backgroundColor = _progressViewColor;
         }
     }
     return _progressView;
@@ -235,9 +237,9 @@
     [self.progressView setProgress:progress animated:YES];
 }
 
-//- (void)webView:(SPWebView *)webView withError:(NSError *)error{
-//    
-//}
+- (void)webViewDidStartLoad:(SPWebView *)webView{
+    [self removespErrorView];
+}
 
 - (void)webViewDidFinshLoad:(SPWebView *)webView{
     if (webView.title.length >0) {
@@ -245,8 +247,14 @@
     }
 }
 
-- (void)webViewDidStartLoad:(SPWebView *)webView{
+- (void)webView:(SPWebView *)webView withError:(NSError *)error{
+
+    [self addspErrorViewWithTitle:error.description?:@"点击重新加载"];
     
+    __weak typeof (self) weakSelf = self;
+    self.spErrorView.tapBlock = ^(id sener){
+        [weakSelf.webView reload];
+    };
 }
 
 - (void)webView:(WKWebView *)webView runJavaScriptAlertPanelWithMessage:(NSString *)message initiatedByFrame:(WKFrameInfo *)frame completionHandler:(void (^)(void))completionHandler{

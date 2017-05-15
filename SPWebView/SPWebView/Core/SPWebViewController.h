@@ -27,7 +27,7 @@
 
 @property (nonatomic, readonly) SPWebView *webView;
 
-@property (nonatomic, assign) BOOL isUseWeChatStyle; //Imitate WeChat style.defult is YES ,if you set NO you need self-define style
+@property (nonatomic, assign) BOOL isUseWeChatStyle; //Imitate WeChat style.defult is YES ,if you set NO you need self-define style（默认仿微信风格）
 
 @property (nonatomic, assign ,getter= isUseUIWebView) BOOL useUIWebView;// defult is NO ,if you set YES the webView is UIWebView
 
@@ -42,6 +42,7 @@
  * @brief load local html file（加载本地文件路径）
  */
 - (instancetype)initWithFilePath:(NSString *)urlString;
+
 - (instancetype)initWithURL:(NSURL *)URL;
 
 /*************************JS to OC*************************/

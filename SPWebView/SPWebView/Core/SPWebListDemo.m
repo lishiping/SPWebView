@@ -68,12 +68,12 @@
             
             //example: similar to SPWebVCDemo, inherit SPWebViewController, pay equal attention to write registerJavascriptName method, join registered JSname, and realization method of the registration
             //使用例子：类似于SPWebVCDemo，继承SPWebViewController，并重写registerJavascriptName方法，加入注册的JSName，并实现注册的方法
-            SPWebVCDemo *web = [[SPWebVCDemo alloc]initWithURLString:@"https://www.xin.com"];
+            SPWebVCDemo *web = [[SPWebVCDemo alloc]initWithURLString:@"https://github.com/lishiping"];
             [self.navigationController pushViewController:web animated:YES];
         } break;
             
         case 1:{
-            SPWebVCDemo *web = [[SPWebVCDemo alloc]initWithURLString:@"https://www.emateglobal.com/auth/index.html"];
+             SPWebVCDemo *web = [[SPWebVCDemo alloc]initWithURLString:@"https://www.xin.com"];
             web.useUIWebView = YES;
             [self.navigationController pushViewController:web animated:YES];
         } break;
