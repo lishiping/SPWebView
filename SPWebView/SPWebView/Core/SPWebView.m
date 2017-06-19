@@ -8,14 +8,15 @@
 
 //  实现思路参照CHWebView,感谢作者Chausson开源,在作者原有基础上优化更新,使用NJKWebViewProgress,感谢作者开源
 
-//If you feel the WebView open source is of great help to you, please give the author some praise, recognition you give great encouragement, the author also hope you give the author other open source libraries some praise, the author will release better open source library for you again
-//如果您感觉本开源WebView对您很有帮助，请给作者点个赞，您的认可给作者极大的鼓励，也希望您给作者其他的开源库点个赞，作者还会再发布更好的开源库给大家
+//If you think this open source library is of great help to you, please open the URL to click the Star,your approbation can encourage me, the author will publish the better open source library for guys again
+//如果您认为本开源库对您很有帮助，请打开URL给作者点个赞，您的认可给作者极大的鼓励，作者还会发布更好的开源库给大家
 
 //github address//https://github.com/lishiping/SPWebView
 //github address//https://github.com/lishiping/SPDebugBar
 //github address//https://github.com/lishiping/SPFastPush
 //github address//https://github.com/lishiping/SPMacro
 //github address//https://github.com/lishiping/SafeData
+//github address//https://github.com/lishiping/SPCategory
 
 
 #import "SPWebView.h"
@@ -82,7 +83,7 @@
 #pragma mark - load method
 - (void)loadURLString:(NSString *)urlString
 {
-    NSAssert(urlString.length, @"Error CHWebView loadURL: is not allow nil or empty");
+    NSAssert(urlString.length, @"Error SPWebView loadURL: is not allow nil or empty");
     NSURLRequest *rquest = [NSURLRequest requestWithURL:[NSURL URLWithString:urlString]];
     [self loadRequest:rquest];
 }
