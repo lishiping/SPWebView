@@ -76,8 +76,11 @@ typedef NS_ENUM(NSInteger, SPWebViewNavigationType) {
 
 /****************************init**********************/
 
-- ( instancetype)initWithUIWebView; // If you want choose UIWebView
-- ( instancetype)initWithUIWebView:(CGRect)frame;
+- ( instancetype)initWKWebView;
+- ( instancetype)initWKWebViewWithFrame:(CGRect)frame;
+
+- ( instancetype)initUIWebView; // If you want choose UIWebView
+- ( instancetype)initUIWebViewWithFrame:(CGRect)frame;
 
 /****************************load**********************/
 

@@ -25,52 +25,71 @@
 #import <JavaScriptCore/JavaScriptCore.h>
 
 #if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_8_0
+
 @interface SPWebView ()<UIWebViewDelegate,NJKWebViewProgressDelegate ,WKUIDelegate,WKNavigationDelegate,WKScriptMessageHandler>
 @property (nonatomic, strong) JSContext *context;
 @property (nonatomic, strong) NJKWebViewProgress *progressProxy;
+
 #else
+
 @interface SPWebView ()<UIWebViewDelegate,NJKWebViewProgressDelegate>
 @property (nonatomic, strong) JSContext *context;
 @property (nonatomic, strong) NJKWebViewProgress *progressProxy;
+
 #endif
+
 @end
 
 @implementation SPWebView
 
 #pragma mark - init &dealloc
+
 - (instancetype)init
 {
     self = [super init];
     if (self) {
-        _webView = [[WKWebView alloc]initWithFrame:CGRectZero configuration:[self configuretion]];
+        _webView = [[WKWebView alloc]initWithFrame:self.bounds configuration:[self configuretion]];
         [self initialize:(WKWebView *)_webView];
     }
     return self;
 }
 
+//默认使用WKWebView
 - (instancetype)initWithFrame:(CGRect)frame
 {
     self = [super initWithFrame:frame];
     if (self) {
-        _webView = [[WKWebView alloc] initWithFrame:frame configuration:[self configuretion]];
+        _webView = [[WKWebView alloc] initWithFrame:self.bounds configuration:[self configuretion]];
         [self initialize:(WKWebView *)_webView];
     }
     return self;
 }
 
-- ( instancetype)initWithUIWebView{
+- (instancetype)initWKWebView
+{
+    return [self init];
+}
+
+- (instancetype)initWKWebViewWithFrame:(CGRect)frame
+{
+    return [self initWithFrame:frame];
+}
+
+- ( instancetype)initUIWebView
+{
     self = [super init];
     if (self) {
-        _webView = [[UIWebView alloc]init];
+        _webView = [[UIWebView alloc]initWithFrame:self.bounds];
         [self initializeUIWebView:(UIWebView *)_webView];
     }
     return self;
 }
 
-- ( instancetype)initWithUIWebView:(CGRect)frame{
+- ( instancetype)initUIWebViewWithFrame:(CGRect)frame
+{
     self = [super initWithFrame:frame];
     if (self) {
-        _webView = [[UIWebView alloc]initWithFrame:frame];
+        _webView = [[UIWebView alloc]initWithFrame:self.bounds];
         [self initializeUIWebView:(UIWebView *)_webView];
     }
     return self;
@@ -273,7 +292,7 @@
 //// 接收到服务器跳转请求之后再执行
 //- (void)webView:(WKWebView *)webView didReceiveServerRedirectForProvisionalNavigation:(WKNavigation *)navigation
 //{
-//    
+//
 //}
 //1.创建一个新的WebVeiw
 //- (nullable WKWebView *)webView:(WKWebView *)webView createWebViewWithConfiguration:(WKWebViewConfiguration *)configuration forNavigationAction:(WKNavigationAction *)navigationAction windowFeatures:(WKWindowFeatures *)windowFeatures;
@@ -533,6 +552,13 @@
     }
 }
 
+- (void)removeFromSuperview{
+    [super removeFromSuperview];
+    if ([_webView isKindOfClass:[WKWebView class]]) {
+        [self unregisterFromKVO];
+    }
+}
+
 + (NSBundle *)bundleForName:(NSString *)bundleName{
     NSString *pathComponent = [NSString stringWithFormat:@"%@.bundle", bundleName];
     NSString *bundlePath =[[[NSBundle bundleForClass:[self class]] resourcePath] stringByAppendingPathComponent:pathComponent];
@@ -540,11 +566,5 @@
     return customizedBundle;
 }
 
-- (void)removeFromSuperview{
-    [super removeFromSuperview];
-    if ([_webView isKindOfClass:[WKWebView class]]) {
-        [self unregisterFromKVO];
-    }
-}
 
 @end

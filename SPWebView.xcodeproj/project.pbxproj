@@ -22,8 +22,6 @@
 		E12420731EB3057100DB2837 /* SPWebView.bundle in Resources */ = {isa = PBXBuildFile; fileRef = E12420691EB3057100DB2837 /* SPWebView.bundle */; };
 		E12420751EB3249B00DB2837 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = E12420741EB3249B00DB2837 /* README.md */; };
 		E1377B2D1EB1E18E008BC1A1 /* HomeVC.m in Sources */ = {isa = PBXBuildFile; fileRef = E1377B2C1EB1E18E008BC1A1 /* HomeVC.m */; };
-		E14A0EA31EC5C05600A0FA19 /* UIViewController+LSPErrorView.m in Sources */ = {isa = PBXBuildFile; fileRef = E14A0EA21EC5C05600A0FA19 /* UIViewController+LSPErrorView.m */; };
-		E14A0EA61EC5C0D400A0FA19 /* LSPErrorView.m in Sources */ = {isa = PBXBuildFile; fileRef = E14A0EA51EC5C0D400A0FA19 /* LSPErrorView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,10 +48,6 @@
 		E12420741EB3249B00DB2837 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		E1377B2B1EB1E18E008BC1A1 /* HomeVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeVC.h; sourceTree = "<group>"; };
 		E1377B2C1EB1E18E008BC1A1 /* HomeVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeVC.m; sourceTree = "<group>"; };
-		E14A0EA11EC5C05600A0FA19 /* UIViewController+LSPErrorView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+LSPErrorView.h"; sourceTree = "<group>"; };
-		E14A0EA21EC5C05600A0FA19 /* UIViewController+LSPErrorView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+LSPErrorView.m"; sourceTree = "<group>"; };
-		E14A0EA41EC5C0D400A0FA19 /* LSPErrorView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LSPErrorView.h; sourceTree = "<group>"; };
-		E14A0EA51EC5C0D400A0FA19 /* LSPErrorView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LSPErrorView.m; sourceTree = "<group>"; };
 		E7E9D5981AA8B614978872BF /* Pods-SPWebView.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SPWebView.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SPWebView/Pods-SPWebView.debug.xcconfig"; sourceTree = "<group>"; };
 		FB2F1CC6F2CE93D2B7833784 /* libPods-SPWebView.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SPWebView.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -144,10 +138,6 @@
 		E124205A1EB3057100DB2837 /* Core */ = {
 			isa = PBXGroup;
 			children = (
-				E14A0EA41EC5C0D400A0FA19 /* LSPErrorView.h */,
-				E14A0EA51EC5C0D400A0FA19 /* LSPErrorView.m */,
-				E14A0EA11EC5C05600A0FA19 /* UIViewController+LSPErrorView.h */,
-				E14A0EA21EC5C05600A0FA19 /* UIViewController+LSPErrorView.m */,
 				E124205B1EB3057100DB2837 /* SPWebListDemo.h */,
 				E124205C1EB3057100DB2837 /* SPWebListDemo.m */,
 				E124205D1EB3057100DB2837 /* SPWebVCDemo.h */,
@@ -307,11 +297,9 @@
 				E12420751EB3249B00DB2837 /* README.md in Sources */,
 				E124206D1EB3057100DB2837 /* SPWebListDemo.m in Sources */,
 				E1025B981EB0DB21007CF292 /* AppDelegate.m in Sources */,
-				E14A0EA61EC5C0D400A0FA19 /* LSPErrorView.m in Sources */,
 				E124206F1EB3057100DB2837 /* SPWebView.m in Sources */,
 				E1377B2D1EB1E18E008BC1A1 /* HomeVC.m in Sources */,
 				E124206E1EB3057100DB2837 /* SPWebVCDemo.m in Sources */,
-				E14A0EA31EC5C05600A0FA19 /* UIViewController+LSPErrorView.m in Sources */,
 				E1025B951EB0DB21007CF292 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

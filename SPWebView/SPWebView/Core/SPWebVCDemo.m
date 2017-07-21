@@ -30,7 +30,8 @@
     
     NSBundle *bundle = [SPWebView bundleForName:@"SPWebView"];
     NSString *url =  [NSBundle pathForResource:@"sppointIcon@2x" ofType:@"png" inDirectory:bundle.bundlePath];
-    UIImage *image = [UIImage imageWithContentsOfFile:url];
+    
+    UIImage *image = [[UIImage imageWithContentsOfFile:url] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
 
     UIButton *callJS = [UIButton buttonWithType:UIButtonTypeCustom];
     callJS.frame = CGRectMake(0, 0, 22, 44);

@@ -21,15 +21,21 @@
 
 @interface SPWebViewController : UIViewController
 
-@property (nonatomic, strong) UIColor *titleColor;//titleColor,navigationBar.tintColor
+@property (nonatomic, strong) UIColor *titleColor;//titleColor,navigationBar.tintColor(标题颜色，主题颜色，前景色等)
 
-@property (nonatomic,strong) UIColor* progressViewColor;
+@property (nonatomic, strong) UIColor *barTintColor;//(导航栏barTintClolor)
+
+@property (nonatomic,strong) UIColor* progressViewColor;//进度条颜色
 
 @property (nonatomic, readonly) SPWebView *webView;
+
+@property (nonatomic, strong) NSURL *URL;
 
 @property (nonatomic, assign) BOOL isUseWeChatStyle; //Imitate WeChat style.defult is YES ,if you set NO you need self-define style（默认仿微信风格）
 
 @property (nonatomic, assign ,getter= isUseUIWebView) BOOL useUIWebView;// defult is NO ,if you set YES the webView is UIWebView
+
+@property (nonatomic, assign) BOOL useGoback;// defult is YES ,if you set NO,when click backButton navigationController pop to last VC(默认YES，当YES的时候，已经进入多层页面点击返回按钮类似仿微信，先执行webview的goBack方法返回到上一个页面，到最后一层再pop，如果设置为NO，则直接执行导航控制器的pop方法)
 
 @property (nonatomic, assign) BOOL isHiddenProgressView; // defult is NO ,if you set Yes the progressBar will not show .
 
@@ -38,7 +44,7 @@
  */
 - (instancetype)initWithURLString:(NSString *)urlString;
 
-/**     
+/**
  * @brief load local html file（加载本地文件路径）
  */
 - (instancetype)initWithFilePath:(NSString *)urlString;
@@ -61,4 +67,6 @@
 - (void)invokeJavaScript:(NSString *)function;
 
 - (void)invokeJavaScript:(NSString *)function completionHandler:(void (^)( id, NSError * error))completionHandler;
+
+
 @end

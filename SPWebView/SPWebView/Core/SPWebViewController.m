@@ -15,10 +15,14 @@
 //github address//https://github.com/lishiping/SafeData
 //github address//https://github.com/lishiping/SPCategory
 
+
+#define SP_STATUSBAR_HEIGHT     ([[UIApplication sharedApplication] statusBarFrame].size.height)
+
+#define SP_NAVIBAR_HEIGHT (self.navigationController.navigationBar.frame.size.height)
+
 #import "SPWebViewController.h"
 #import "NJKWebViewProgress.h"
 #import "NJKWebViewProgressView.h"
-#import "UIViewController+LSPErrorView.h"
 
 @interface SPWebViewController ()<SPWebViewDelegate>
 
@@ -30,47 +34,36 @@
 
 @property (nonatomic, strong) SPWebView *webView;
 
-@property (nonatomic ,assign) BOOL isFile;
-@property (nonatomic, copy)   NSURL *URL;
-@property (nonatomic ,assign) BOOL hiddenNavtionBar;
 @end
 
 @implementation SPWebViewController
 
 #pragma mark - init
+
 - (instancetype)initWithURLString:(NSString *)urlString
 {
-    if (self = [self init]) {
-        _URL = [NSURL URLWithString:urlString];
-        _isFile = NO;
-    }
-    return self;
+    return [self initWithURL:[NSURL URLWithString:urlString]];
 }
 
-- (instancetype)initWithFilePath:(NSString *)urlString{
-    
-    if (self = [self init]) {
-        _URL = [NSURL fileURLWithPath:urlString];
-        _isFile = YES;        
-    }
-    return self;
+- (instancetype)initWithFilePath:(NSString *)urlString
+{
+    return [self initWithURL:[NSURL fileURLWithPath:urlString]];
 }
 
 -(instancetype)initWithURL:(NSURL *)URL
 {
-    if (self =[self init]) {
-        _URL = URL;
-    }
+    self = [self init];
+    _URL = URL;
     return self;
 }
 
 -(instancetype)init
 {
-    if (self = [super init]) {
-        _isUseWeChatStyle = YES;
-        _isHiddenProgressView = NO;
-        _progressViewColor = [UIColor colorWithRed:119.0/255 green:228.0/255 blue:115.0/255 alpha:1];
-    }
+    self = [super init];
+    _isUseWeChatStyle = YES;
+    _useGoback = YES;
+    _isHiddenProgressView = NO;
+    _progressViewColor = [UIColor colorWithRed:119.0/255 green:228.0/255 blue:115.0/255 alpha:1];
     return self;
 }
 
@@ -99,31 +92,52 @@
     
 }
 
-#pragma mark -
+#pragma mark - initialize
 - (void)initialize{
-    if([self isNavigationHidden]){
-        self.automaticallyAdjustsScrollViewInsets = NO;
-    }
     
-    if (_isUseWeChatStyle && !self.navigationController.navigationBarHidden) {
+    self.automaticallyAdjustsScrollViewInsets = NO;
+    self.extendedLayoutIncludesOpaqueBars = YES;
+    
+    self.view.backgroundColor = [UIColor whiteColor];
+    
+    //如果是仿微信风格，则设置导航栏背景色为渐变图片，文字白色，状态栏文字白色
+    if (_isUseWeChatStyle && ![self isNavigationHidden])
+    {
         NSBundle *bundle = [SPWebView bundleForName:@"SPWebView"];
         NSString *url =  [NSBundle pathForResource:@"spnavbarperfect@2x" ofType:@"png" inDirectory:bundle.bundlePath];
         UIImage *image = [UIImage imageWithContentsOfFile:url];
         
         [self.navigationController.navigationBar setBackgroundImage:image
-                                                     forBarPosition:UIBarPositionAny
-                                                         barMetrics:UIBarMetricsDefault];
+                                                      forBarMetrics:UIBarMetricsDefault];
         _titleColor = [UIColor whiteColor];
         
         [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent animated:NO];
     }
     
-    if (_titleColor && self.navigationController) {
+    //如果没有设置微信风格，设置主题颜色
+    if (_titleColor && ![self isNavigationHidden]) {
         self.navigationController.navigationBar.titleTextAttributes = @{NSForegroundColorAttributeName:_titleColor};
         self.navigationController.navigationBar.tintColor = _titleColor;
     }
     
-    [self updateNavigationItems];
+    if (_barTintColor && ![self isNavigationHidden]) {
+        
+        [self.navigationController.navigationBar setBackgroundImage:nil
+                                                      forBarMetrics:UIBarMetricsDefault];
+        self.navigationController.navigationBar.barTintColor = _barTintColor;
+    }
+    
+    //是否使用返回goback风格
+    if (_useGoback) {
+        [self updateNavigationItems];
+    }
+    else
+    {
+        self.navigationController.interactivePopGestureRecognizer.enabled = YES;
+        self.navigationItem.hidesBackButton = YES;
+        
+        self.navigationItem.leftBarButtonItem = self.customBackBarItem;
+    }
     
     [self.view addSubview:self.webView];
     [self.webView loadURL:_URL];
@@ -135,21 +149,31 @@
 }
 
 #pragma mark - setter & getter method
+
+-(void)setURL:(NSURL *)URL
+{
+    _URL = URL;
+}
+
 -(void)setProgressViewColor:(UIColor *)progressViewColor{
     _progressViewColor = progressViewColor;
-    self.progressView.progressBarView.backgroundColor = progressViewColor;
+    if (_progressView) {
+        _progressView.progressBarView.backgroundColor = _progressViewColor;
+    }
 }
 
 -(SPWebView*)webView
 {
     if (!_webView) {
         
-        CGFloat he =[self isNavigationHidden]?self.view.frame.size.height:self.view.frame.size.height-64;
-        CGRect rect = CGRectMake(0, 0 , self.view.frame.size.width,he);
-        if (self.useUIWebView) {
-            _webView = [[SPWebView alloc]initWithUIWebView:rect];
+        CGFloat he =[self isNavigationHidden] ? self.view.frame.size.height-SP_STATUSBAR_HEIGHT : self.view.frame.size.height-(SP_STATUSBAR_HEIGHT+SP_NAVIBAR_HEIGHT);
+        
+        CGRect rect = CGRectMake(0, [self isNavigationHidden]?SP_STATUSBAR_HEIGHT:(SP_STATUSBAR_HEIGHT+SP_NAVIBAR_HEIGHT), self.view.frame.size.width,he);
+        
+        if (_useUIWebView) {
+            _webView = [[SPWebView alloc]initUIWebViewWithFrame:rect];
         }else{
-            _webView = [[SPWebView alloc]initWithFrame:rect];
+            _webView = [[SPWebView alloc]initWKWebViewWithFrame:rect];
         }
         _webView.delegate = self;
     }
@@ -170,10 +194,12 @@
 -(UIBarButtonItem*)customBackBarItem{
     if (!_customBackBarItem) {
         
+        //从bundle读取icon
         NSBundle *bundle = [SPWebView bundleForName:@"SPWebView"];
         NSString *backItemurl =  [NSBundle pathForResource:@"spbackIconBlack@2x" ofType:@"png" inDirectory:bundle.bundlePath];
         NSString *backItemHLurl =  [NSBundle pathForResource:@"spbackIconBlack-hl@2x" ofType:@"png" inDirectory:bundle.bundlePath];
         
+        //转为图片的时候忽略图片颜色
         UIImage* backItemImage = [[UIImage imageWithContentsOfFile:backItemurl] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
         UIImage* backItemHlImage = [[UIImage imageWithContentsOfFile:backItemHLurl] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
         
@@ -181,6 +207,7 @@
         [backButton setTitle:@"返回" forState:UIControlStateNormal];
         [backButton setTitleColor:self.navigationController.navigationBar.tintColor forState:UIControlStateNormal];
         [backButton setTitleColor:[self.navigationController.navigationBar.tintColor colorWithAlphaComponent:0.5] forState:UIControlStateHighlighted];
+        
         [backButton setImage:backItemImage forState:UIControlStateNormal];
         [backButton setImage:backItemHlImage forState:UIControlStateHighlighted];
         [backButton sizeToFit];
@@ -213,8 +240,9 @@
 }
 
 #pragma mark - click event
--(void)customBackItemClicked{
-    if (self.webView.canGoBack)
+-(void)customBackItemClicked
+{
+    if (self.webView.canGoBack && _useGoback)
     {
         [self.webView goBack];
         [self updateNavigationItems];
@@ -238,7 +266,7 @@
 }
 
 - (void)webViewDidStartLoad:(SPWebView *)webView{
-    [self removespErrorView];
+    
 }
 
 - (void)webViewDidFinshLoad:(SPWebView *)webView{
@@ -248,13 +276,7 @@
 }
 
 - (void)webView:(SPWebView *)webView withError:(NSError *)error{
-
-    [self addspErrorViewWithTitle:error.description?:@"点击重新加载"];
     
-    __weak typeof (self) weakSelf = self;
-    self.spErrorView.tapBlock = ^(id sener){
-        [weakSelf.webView reload];
-    };
 }
 
 - (void)webView:(WKWebView *)webView runJavaScriptAlertPanelWithMessage:(NSString *)message initiatedByFrame:(WKFrameInfo *)frame completionHandler:(void (^)(void))completionHandler{
@@ -292,8 +314,8 @@
 
 #pragma makr Private
 - (BOOL)isNavigationHidden{
+    //    self.navigationController.navigationBarHidden
     return self.navigationController.navigationBar.hidden;
 }
-
 
 @end
