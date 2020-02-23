@@ -67,12 +67,11 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     switch (indexPath.row) {
         case 0:{
-            
-            //通常在使用的时候继承SPWebViewController，不要直接使用SPWebViewController，直接使用也不建议修复，能控制的接口及参数已经公开了
+        //通常在使用的时候继承SPWebViewController，不要直接使用SPWebViewController，直接使用也不建议修复，能控制的接口及参数已经公开了
             
             //example: similar to SPWebVCDemo, inherit SPWebViewController, pay equal attention to write registerJavascriptName method, join registered JSname, and realization method of the registration
             //使用例子：类似于SPWebVCDemo，继承SPWebViewController，并重写registerJavascriptName方法，加入注册的JSName，并实现注册的方法
-            SPWebVCDemo *web = [[SPWebVCDemo alloc]initWithURLString:@"https://github.com/lishiping"];
+            SPWebVCDemo *web = [[SPWebVCDemo alloc]initWithURLString:@"http://devfile.jiguangdanci.com/?public=true#/activity/college"];
             [self.navigationController pushViewController:web animated:YES];
         } break;
             
@@ -83,7 +82,7 @@
             web.titleColor = [UIColor whiteColor];
             web.barTintColor =[UIColor orangeColor];
             web.progressViewColor = [UIColor blueColor];
-            web.useGoback = NO;
+//            web.useGoback = NO;
             [self.navigationController pushViewController:web animated:YES];
         } break;
             

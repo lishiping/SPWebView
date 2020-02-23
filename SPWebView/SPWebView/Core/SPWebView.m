@@ -48,7 +48,7 @@
 {
     self = [super init];
     if (self) {
-        _webView = [[WKWebView alloc]initWithFrame:self.bounds configuration:[self configuretion]];
+        _webView = [[WKWebView alloc]initWithFrame:self.bounds configuration:[self configuration]];
         [self initialize:(WKWebView *)_webView];
     }
     return self;
@@ -59,7 +59,7 @@
 {
     self = [super initWithFrame:frame];
     if (self) {
-        _webView = [[WKWebView alloc] initWithFrame:self.bounds configuration:[self configuretion]];
+        _webView = [[WKWebView alloc] initWithFrame:self.bounds configuration:[self configuration]];
         [self initialize:(WKWebView *)_webView];
     }
     return self;
@@ -521,15 +521,38 @@
     _webView.frame = self.bounds;
 }
 
-- (WKWebViewConfiguration *)configuretion{
-    WKWebViewConfiguration *configuretion = [[WKWebViewConfiguration alloc] init];
-    configuretion.preferences = [[WKPreferences alloc]init];
-    configuretion.preferences.minimumFontSize = 10;
-    configuretion.preferences.javaScriptEnabled = true;
-    configuretion.processPool = [[WKProcessPool alloc]init];
+- (WKWebViewConfiguration *)configuration{
+    WKWebViewConfiguration *configuration = [[WKWebViewConfiguration alloc] init];
+    configuration.preferences = [[WKPreferences alloc]init];
+    configuration.preferences.minimumFontSize = 10;
+    configuration.preferences.javaScriptEnabled = true;
+    configuration.processPool = [[WKProcessPool alloc]init];
     // 默认是不能通过JS自动打开窗口的，必须通过用户交互才能打开
-    configuretion.preferences.javaScriptCanOpenWindowsAutomatically = YES;
-    return configuretion;
+    configuration.preferences.javaScriptCanOpenWindowsAutomatically = YES;
+    configuration.allowsInlineMediaPlayback = YES;
+
+    WKUserContentController *userContentController = configuration.userContentController?:[[WKUserContentController alloc] init];
+
+    NSArray *cookies = [NSHTTPCookieStorage sharedHTTPCookieStorage].cookies;
+    for (NSHTTPCookie *cookie in cookies) {
+        NSString *cookieStr = [NSString stringWithFormat:@"document.cookie='%@=%@'",cookie.name,cookie.value];
+        WKUserScript *cookieScript = [[WKUserScript alloc] initWithSource:cookieStr injectionTime:WKUserScriptInjectionTimeAtDocumentStart forMainFrameOnly:NO];
+        [userContentController addUserScript:cookieScript];
+    }
+
+    configuration.userContentController = userContentController;
+
+    if (@available(iOS 11.0, *)) {
+        WKHTTPCookieStore *cookieStroe = configuration.websiteDataStore.httpCookieStore;
+        for (NSHTTPCookie *cookie in cookies) {
+            [cookieStroe setCookie:cookie completionHandler:^{
+            }];
+        }
+    } else {
+        // Fallback on earlier versions
+    }
+        
+    return configuration;
 }
 
 - (NSString *)title{
