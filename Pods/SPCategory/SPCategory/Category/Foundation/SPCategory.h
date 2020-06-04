@@ -14,12 +14,14 @@
 #import "NSString+SPEnCode.h"
 #import "NSData+SPBase64.h"
 #import "NSObject+SPAssociatedObject.h"
+#import "NSObject+SPTypeOfClass.h"
 #import "NSDate+SPTransform.h"
 #import "NSUserDefaults+SPSafe.h"
 
 #import "UIImage+SPGIF.h"
+#import "UIImage+SPBase64.h"
 #import "UIView+SPFrame.h"
-#import "UITableViewCell+SPReuseIdentifier.h"
+#import "UIView+SPReuseIdentifier.h"
 
 #import "UIViewController+SPErrorView.h"
 #import "UIViewController+SPUIAlertController.h"

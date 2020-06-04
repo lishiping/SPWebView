@@ -1,0 +1,1 @@
+../../../SPCategory/SPCategory/Category/Foundation/NSAttributedString+SPSize.h

@@ -78,7 +78,7 @@
     }
     else if ([OFK isKindOfClass:[NSString class]])
     {
-        if ([OFK isEqualToString:@"YES"])
+        if ([OFK isEqualToString:@"YES"] || [OFK isEqualToString:@"true"])
         {
             return YES;
         }

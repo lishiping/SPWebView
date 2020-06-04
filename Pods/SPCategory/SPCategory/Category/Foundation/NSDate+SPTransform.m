@@ -52,6 +52,47 @@
 {
     return [NSDate dateWithTimeIntervalSince1970:timestamp];
 }
++(NSDate*)sp_dateFromTimeString:(NSString *)formatTime
+{
+    return [self sp_dateFromTimeString:formatTime andFormatter:@"YYYY/MM/dd HH:mm:ss"];
+}
+
++(NSDate*)sp_dateFromTimeString:(NSString *)formatTime andFormatter:(NSString *)format
+{
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    
+//    [formatter setDateStyle:NSDateFormatterMediumStyle];
+    
+//    [formatter setTimeStyle:NSDateFormatterShortStyle];
+    
+    [formatter setDateFormat:format]; //(@"YYYY-MM-dd hh:mm:ss") ----------设置你想要的格式,hh与HH的区别:分别表示12小时制,24小时制
+//    NSTimeZone* timeZone = [NSTimeZone localTimeZone];
+//    [formatter setTimeZone:timeZone];
+    NSDate* date = [formatter dateFromString:formatTime]; //------------将字符串按formatter转成nsdate
+    return date;
+}
+
+/**
+ *  将源日期转换为本地时间
+ *
+ *  @return 本地时间
+ */
+- (NSDate *)getLocalDate
+{
+    //设置源日期时区
+    NSTimeZone* sourceTimeZone = [NSTimeZone timeZoneWithAbbreviation:@"UTC"];//或GMT
+    //设置转换后的目标日期时区
+    NSTimeZone* destinationTimeZone = [NSTimeZone localTimeZone];
+    //得到源日期与世界标准时间的偏移量
+    NSInteger sourceGMTOffset = [sourceTimeZone secondsFromGMTForDate:self];
+    //目标日期与本地时区的偏移量
+    NSInteger destinationGMTOffset = [destinationTimeZone secondsFromGMTForDate:self];
+    //得到时间偏移量的差值
+    NSTimeInterval interval = destinationGMTOffset - sourceGMTOffset;
+    //转为现在时间
+    NSDate* destinationDateNow = [[NSDate alloc] initWithTimeInterval:interval sinceDate:self];
+    return destinationDateNow;
+}
 
 + (NSDate *)sp_dateWithLocalNaturalLanguageString:(NSString *)timeString
 {
@@ -163,7 +204,7 @@
     }
     else if ([components day] > 1)
     {
-        timeStr = [NSString stringWithFormat:loadMuLanguage(@"%d天s前", nil), [components day]];
+        timeStr = [NSString stringWithFormat:loadMuLanguage(@"%d天前", nil), [components day]];
     }
     else if ([components day] == 1)
     {
@@ -171,7 +212,7 @@
     }
     else if ([components hour] > 1)
     {
-        timeStr = [NSString stringWithFormat:loadMuLanguage(@"%d小时s前", nil), [components hour]];
+        timeStr = [NSString stringWithFormat:loadMuLanguage(@"%d小时前", nil), [components hour]];
     }
     else if ([components hour] == 1)
     {
@@ -325,7 +366,7 @@
 {
     NSCalendar *calendar = [self calendarFromCurrentThread];
     NSCalendarUnit unitFlags = NSCalendarUnitYear| NSCalendarUnitMonth | NSCalendarUnitDay;
-
+    
     NSDateFormatter *dateFormatter = [self dateFormatterFromCurrentThread];
     
     NSDateComponents *nowComponents = [calendar components:unitFlags fromDate:[NSDate date]];
@@ -335,12 +376,10 @@
     NSString *formattedString = nil;
     if ([nowComponents year] == [dateComponents year] &&
         [nowComponents month] == [dateComponents month] &&
-        [nowComponents day] == [dateComponents day])				// 今天.
+        [nowComponents day] == [dateComponents day])                // 今天.
     {
-        
         int diff = [self timeIntervalSinceNow];
-        
-        if (diff <= 0 && diff > -60 * 60)							// 一小时之内.
+        if (diff <= 0 && diff > -60 * 60)                            // 一小时之内.
         {
             int min = -diff / 60;
             
@@ -388,6 +427,73 @@
         {
             [dateFormatter setDateFormat:@"yyyy-M-d' 'HH:mm"];
         }
+        
+        formattedString = [dateFormatter stringFromDate:self];
+    }
+    return formattedString;
+}
+
+- (NSString *)sp_relativeFormattedString_jgdc
+{
+    NSCalendar *calendar = [self calendarFromCurrentThread];
+    NSCalendarUnit unitFlags = NSCalendarUnitYear| NSCalendarUnitMonth | NSCalendarUnitDay;
+
+    NSDateFormatter *dateFormatter = [self dateFormatterFromCurrentThread];
+    
+    NSDateComponents *nowComponents = [calendar components:unitFlags fromDate:[NSDate date]];
+    NSDateComponents *dateComponents = [calendar components:unitFlags fromDate:self];
+    NSDateComponents *yesterdayComponents = [calendar components:unitFlags fromDate:[[NSDate date] dateByAddingTimeInterval:(-24*60*60)]];
+    
+    NSString *formattedString = nil;
+    if ([nowComponents year] == [dateComponents year] &&
+        [nowComponents month] == [dateComponents month] &&
+        [nowComponents day] == [dateComponents day])				// 今天.
+    {
+        int diff = [self timeIntervalSinceNow];
+        if (diff <= 0 && diff > -60 * 60)							// 一小时之内.
+        {
+            int min = -diff / 60;
+            
+            if (min == 0)
+            {
+                min = 1;
+            }
+            
+            if (min <= 1)
+            {
+                formattedString = [NSString stringWithFormat:loadMuLanguage(@"刚刚", @""), min];
+            }
+            else
+            {
+                formattedString = [NSString stringWithFormat:loadMuLanguage(@"%d分钟前", @""), min];
+            }
+        }
+        else
+        {
+            [dateFormatter setDateFormat:@"HH:mm"];
+            formattedString = [dateFormatter stringFromDate:self];
+        }
+    }
+//    else if([yesterdayComponents year] == [dateComponents year] &&
+//            [yesterdayComponents month] == [dateComponents month] &&
+//            [yesterdayComponents day] == [dateComponents day])          // 昨天
+//    {
+//        [dateFormatter setDateFormat:loadMuLanguage(@"'昨天 'HH:mm", @"")];
+//        formattedString = [dateFormatter stringFromDate:self];
+//    }
+    else
+    {
+        NSLocale *mainlandChinaLocale = [[NSLocale alloc] initWithLocaleIdentifier:@"zh_CN"];
+        [dateFormatter setLocale:mainlandChinaLocale];
+        
+//        if ([nowComponents year] == [dateComponents year])
+//        {
+//            [dateFormatter setDateFormat:@"M-d' 'HH:mm"];
+//        }
+//        else
+//        {
+            [dateFormatter setDateFormat:@"yyyy-MM-dd"];
+//        }
         
         formattedString = [dateFormatter stringFromDate:self];
     }
@@ -493,6 +599,21 @@
     NSDateComponents *selfCmps = [calendar components:unit fromDate:self];
     
     return (selfCmps.year == nowCmps.year) && (selfCmps.month == nowCmps.month);
+}
+
+- (BOOL)sp_isThisWeek
+{
+    NSCalendar *calendar = [NSCalendar currentCalendar];
+    NSCalendarUnit unit = NSCalendarUnitDay |NSCalendarUnitWeekday| NSCalendarUnitMonth |  NSCalendarUnitYear;
+    
+    // 1.获得当前时间的年月日
+    NSDateComponents *nowCmps = [calendar components:unit fromDate:[NSDate date]];
+    // 2.获得self的年月日
+    NSDateComponents *selfCmps = [calendar components:unit fromDate:self];
+    
+    return (selfCmps.year == nowCmps.year) &&
+    (selfCmps.month == nowCmps.month) &&
+    (selfCmps.weekOfMonth == nowCmps.weekOfMonth);
 }
 
 - (BOOL)sp_isThisToday

@@ -85,7 +85,13 @@ typedef enum{
  */
 + (NSDate *)sp_dateFromTimestamp:(double)timestamp;
 
-#pragma mark -字符串转时间
+#pragma mark - 字符串转时间
+
++(NSDate*)sp_dateFromTimeString:(NSString *)formatTime;
+
++(NSDate*)sp_dateFromTimeString:(NSString *)formatTime andFormatter:(NSString *)format;
+
+- (NSDate *)getLocalDate;
 /*!
  *  将日期形式的字符串转换成NSDate  例如（Wed Dec 27 15:58:29 +0800 2017）
  *
@@ -112,6 +118,24 @@ typedef enum{
  *  @return 转换后的NSString
  */
 - (NSString *)sp_relativeFormattedString;
+
+
+/**
+ * 评论显示时间规则
+ *
+ * @param millis The milliseconds.
+ * @return the friendly time span by now
+ * <ul>
+ * <li>如果小于 1 分钟内，显示刚刚</li>
+ * <li>如果在 1 小时内，显示 XXX分钟前</li>
+ * <li>如果在 1 小时外的今天内，显示15:32</li>
+ * <li>其余显示，2016-10-15</li>
+ * <li>时间不合法的情况全部日期和时间信息，如星期六 十月 27 14:21:20 CST 2007</li>
+ * </ul>
+
+ @return 时间字符串
+ */
+- (NSString *)sp_relativeFormattedString_jgdc;
 
 /*!
  *  根据当前的NSDate，生成并返回一个相对时间描述的NSString对象

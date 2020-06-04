@@ -37,7 +37,7 @@
 
 - (CGSize)sp_getSize_maxSize:(CGSize)size font:(UIFont *)font breakMode:(NSLineBreakMode)breakMode alignment:(NSTextAlignment)alignment
 {
-    return [self sp_getSize_maxSize:size font:font breakMode:breakMode alignment:alignment lineSpacing:-1];
+    return [self sp_getSize_maxSize:size font:font breakMode:breakMode alignment:alignment lineSpacing:0];
 }
 
 - (CGSize)sp_getSize_maxSize:(CGSize)size font:(UIFont *)font breakMode:(NSLineBreakMode)breakMode alignment:(NSTextAlignment)alignment lineSpacing:(CGFloat)lineSpacing

@@ -7,6 +7,7 @@
 //
 
 #import "UIBarButtonItem+JItem.h"
+#import <SPCategory/UIButton+SPAction.h>
 
 @implementation UIBarButtonItem (JItem)
 
@@ -20,11 +21,11 @@
     [btn setImage:image forState:UIControlStateNormal];
     btn.frame = CGRectMake(0, 0, 40, 44);
     [btn setExclusiveTouch:YES];
-//    [btn sp_button_onClickBlock:^(id object) {
-//        if (click) {
-//            click(object);
-//        }
-//    }];
+    [btn sp_button_onClickBlock:^(id object) {
+        if (click) {
+            click(object);
+        }
+    }];
     UIBarButtonItem *barButtonItem = [self initWithCustomView:btn];
     return barButtonItem;
 }

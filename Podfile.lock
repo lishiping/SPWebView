@@ -2,7 +2,7 @@ PODS:
   - MBProgressHUD (1.0.0)
   - MJExtension (3.2.1)
   - SafeData (1.0.3)
-  - SPCategory (0.4.4):
+  - SPCategory (0.5.0):
     - MBProgressHUD (= 1.0.0)
     - SafeData
     - SPMacro
@@ -29,7 +29,7 @@ SPEC CHECKSUMS:
   MBProgressHUD: 4890f671c94e8a0f3cf959aa731e9de2f036d71a
   MJExtension: 635f2c663dcb1bf76fa4b715b2570a5710aec545
   SafeData: 1b1f190e2d756e2face4a13046ccd698d70407bd
-  SPCategory: c8c6b727a957924962e512c0f44c33dcb0a91476
+  SPCategory: a78239340aa4c57cd7f90321af712a607bf52bd2
   SPFastPush: da1d277f10bb9636adce4e74a425400eb23438d2
   SPMacro: e6148a12ff383dc3b73b4edb45ba116371b562e8
 

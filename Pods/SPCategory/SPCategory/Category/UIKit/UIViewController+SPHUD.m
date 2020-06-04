@@ -32,7 +32,7 @@ alpha   :1.0]
 
 
 #define hud_detailLabel_textColor [UIColor whiteColor]//文本颜色
-#define hud_backgroundColor [UIColor whiteColor]//整体背景色
+#define hud_backgroundColor [UIColor clearColor]//整体背景色
 #define hud_bezelView_Color sp_color_rgb(0x1E1E1E)//hud块背景色
 #define hud_detailLabel_font [UIFont systemFontOfSize:14]//文本字体
 
@@ -262,18 +262,18 @@ void showProgressHUD(UIView *superView, NSString *text,MBProgressHUDMode mode,fl
     }
     hud.detailsLabel.text = text;
     
-    if (font) {
-        hud.detailsLabel.font = font;
-    }
-    if (textColor) {
-        hud.detailsLabel.textColor = textColor;
-    }
-    if (bezelViewColor) {
-        hud.bezelView.color = bezelViewColor;
-    }
-    if (backgroundColor) {
-        hud.backgroundColor = backgroundColor;
-    }
+//    if (font) {
+//        hud.detailsLabel.font = font;
+//    }
+//    if (textColor) {
+//        hud.detailsLabel.textColor = textColor;
+//    }
+//    if (bezelViewColor) {
+//        hud.bezelView.color = bezelViewColor;
+//    }
+//    if (backgroundColor) {
+//        hud.backgroundColor = backgroundColor;
+//    }
     
     if (showTime > 0.0f)
     {

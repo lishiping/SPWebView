@@ -71,11 +71,13 @@
         
         if (ok_title.length>0) {
             UIAlertAction *okAction = [UIAlertAction actionWithTitle:ok_title style:UIAlertActionStyleDefault handler:ok_block];
+//            [okAction setValue:[UIColor commonColor0x43C6AC] forKey:@"titleTextColor"];
             [spAlertVC addAction:okAction];
         }
         
         if (cancel_title.length>0) {
             UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:cancel_title style:UIAlertActionStyleCancel handler:cancel_block];
+//            [cancelAction setValue:[UIColor commonColor0x43C6AC] forKey:@"titleTextColor"];
             [spAlertVC addAction:cancelAction];
         }
         

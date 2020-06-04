@@ -21,6 +21,14 @@
 //NSString相关的Base64
 @interface NSString (SPBase64)
 
+
+/// 去掉base64字符串的前缀，只有去掉前缀转的data才能转成图片，例如：data:image/png;base64,
+- (NSString *)sp_base64StringDeleteImagePrefix;
+
+/// 由于base64字符串有一些不按照规范，所以有可能尾部缺少一个=，这个是检测并加入=的函数
+- (NSString *)sp_stringPaddedForBase64;
+
+
 //从base64转为utf8编码的String
 +(NSString *)stringFromBase64String:(NSString *)base64String;
 //从base64URL转为utf8编码的String
@@ -53,6 +61,5 @@
 -(NSString *)base64String;
 //从data转为base64URL
 -(NSString *)base64UrlEncodedString;
-
 
 @end

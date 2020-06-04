@@ -21,6 +21,22 @@
 
 @implementation NSString (SPBase64)
 
+- (NSString *)sp_base64StringDeleteImagePrefix
+{
+    NSString *string = nil;
+    NSArray *array = [self componentsSeparatedByString:@","];
+    if (array.count==2) {
+        string = array[1];
+    }
+    return string;
+}
+
+- (NSString *)sp_stringPaddedForBase64
+{
+    NSUInteger paddedLength = self.length + (self.length % 3);
+    return [self stringByPaddingToLength:paddedLength withString:@"=" startingAtIndex:0];
+}
+
 -(NSString *)base64String
 {
     NSData *utf8encoding = [self dataUsingEncoding:NSUTF8StringEncoding];
@@ -263,6 +279,5 @@
 {
     return [NSString base64UrlEncodedStringFromBase64String:[self base64String]];
 }
-
 
 @end

@@ -1,0 +1,1 @@
+../../../SPCategory/SPCategory/Category/UIKit/UINavigationController+SPGestureRecognizer.h
