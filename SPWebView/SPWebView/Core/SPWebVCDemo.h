@@ -15,8 +15,8 @@
 //github address//https://github.com/lishiping/SafeData
 //github address//https://github.com/lishiping/SPCategory
 
-#import "SPWebViewController.h"
+#import "LSPWebViewController.h"
 
-@interface SPWebVCDemo : SPWebViewController
+@interface SPWebVCDemo : LSPWebViewController
 
 @end

@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		15D55BF6D526B9FF487204E3 /* libPods-SPWebView.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FB2F1CC6F2CE93D2B7833784 /* libPods-SPWebView.a */; };
+		1E1769AE2472B77E0082E7F4 /* LSPWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E1769AB2472B77E0082E7F4 /* LSPWebViewController.m */; };
+		1E1769AF2472B77E0082E7F4 /* LSPWebView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E1769AC2472B77E0082E7F4 /* LSPWebView.m */; };
+		1E4F856324892CA10001B979 /* SPBundleTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E4F856224892CA10001B979 /* SPBundleTools.m */; };
+		1E4F8566248932130001B979 /* UIBarButtonItem+JItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E4F8565248932130001B979 /* UIBarButtonItem+JItem.m */; };
 		E1025B951EB0DB21007CF292 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E1025B941EB0DB21007CF292 /* main.m */; };
 		E1025B981EB0DB21007CF292 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E1025B971EB0DB21007CF292 /* AppDelegate.m */; };
 		E1025B9E1EB0DB21007CF292 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E1025B9C1EB0DB21007CF292 /* Main.storyboard */; };
@@ -17,8 +21,6 @@
 		E124206C1EB3057100DB2837 /* WebView.gif in Resources */ = {isa = PBXBuildFile; fileRef = E12420581EB3057100DB2837 /* WebView.gif */; };
 		E124206D1EB3057100DB2837 /* SPWebListDemo.m in Sources */ = {isa = PBXBuildFile; fileRef = E124205C1EB3057100DB2837 /* SPWebListDemo.m */; };
 		E124206E1EB3057100DB2837 /* SPWebVCDemo.m in Sources */ = {isa = PBXBuildFile; fileRef = E124205E1EB3057100DB2837 /* SPWebVCDemo.m */; };
-		E124206F1EB3057100DB2837 /* SPWebView.m in Sources */ = {isa = PBXBuildFile; fileRef = E12420601EB3057100DB2837 /* SPWebView.m */; };
-		E12420701EB3057100DB2837 /* SPWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E12420621EB3057100DB2837 /* SPWebViewController.m */; };
 		E12420731EB3057100DB2837 /* SPWebView.bundle in Resources */ = {isa = PBXBuildFile; fileRef = E12420691EB3057100DB2837 /* SPWebView.bundle */; };
 		E12420751EB3249B00DB2837 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = E12420741EB3249B00DB2837 /* README.md */; };
 		E1377B2D1EB1E18E008BC1A1 /* HomeVC.m in Sources */ = {isa = PBXBuildFile; fileRef = E1377B2C1EB1E18E008BC1A1 /* HomeVC.m */; };
@@ -26,6 +28,14 @@
 
 /* Begin PBXFileReference section */
 		0B64B115F3A31E0149E72DE7 /* Pods-SPWebView.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SPWebView.release.xcconfig"; path = "Pods/Target Support Files/Pods-SPWebView/Pods-SPWebView.release.xcconfig"; sourceTree = "<group>"; };
+		1E1769AA2472B77E0082E7F4 /* LSPWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LSPWebViewController.h; sourceTree = "<group>"; };
+		1E1769AB2472B77E0082E7F4 /* LSPWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LSPWebViewController.m; sourceTree = "<group>"; };
+		1E1769AC2472B77E0082E7F4 /* LSPWebView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LSPWebView.m; sourceTree = "<group>"; };
+		1E1769AD2472B77E0082E7F4 /* LSPWebView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LSPWebView.h; sourceTree = "<group>"; };
+		1E4F856124892CA10001B979 /* SPBundleTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPBundleTools.h; sourceTree = "<group>"; };
+		1E4F856224892CA10001B979 /* SPBundleTools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPBundleTools.m; sourceTree = "<group>"; };
+		1E4F856424892F130001B979 /* UIBarButtonItem+JItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIBarButtonItem+JItem.h"; sourceTree = "<group>"; };
+		1E4F8565248932130001B979 /* UIBarButtonItem+JItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIBarButtonItem+JItem.m"; sourceTree = "<group>"; };
 		E1025B901EB0DB21007CF292 /* SPWebView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SPWebView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E1025B941EB0DB21007CF292 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		E1025B961EB0DB21007CF292 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -40,10 +50,6 @@
 		E124205C1EB3057100DB2837 /* SPWebListDemo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPWebListDemo.m; sourceTree = "<group>"; };
 		E124205D1EB3057100DB2837 /* SPWebVCDemo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPWebVCDemo.h; sourceTree = "<group>"; };
 		E124205E1EB3057100DB2837 /* SPWebVCDemo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPWebVCDemo.m; sourceTree = "<group>"; };
-		E124205F1EB3057100DB2837 /* SPWebView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPWebView.h; sourceTree = "<group>"; };
-		E12420601EB3057100DB2837 /* SPWebView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPWebView.m; sourceTree = "<group>"; };
-		E12420611EB3057100DB2837 /* SPWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPWebViewController.h; sourceTree = "<group>"; };
-		E12420621EB3057100DB2837 /* SPWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPWebViewController.m; sourceTree = "<group>"; };
 		E12420691EB3057100DB2837 /* SPWebView.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = SPWebView.bundle; sourceTree = "<group>"; };
 		E12420741EB3249B00DB2837 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		E1377B2B1EB1E18E008BC1A1 /* HomeVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeVC.h; sourceTree = "<group>"; };
@@ -138,14 +144,18 @@
 		E124205A1EB3057100DB2837 /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				1E4F8565248932130001B979 /* UIBarButtonItem+JItem.m */,
+				1E4F856424892F130001B979 /* UIBarButtonItem+JItem.h */,
+				1E4F856124892CA10001B979 /* SPBundleTools.h */,
+				1E4F856224892CA10001B979 /* SPBundleTools.m */,
 				E124205B1EB3057100DB2837 /* SPWebListDemo.h */,
 				E124205C1EB3057100DB2837 /* SPWebListDemo.m */,
 				E124205D1EB3057100DB2837 /* SPWebVCDemo.h */,
 				E124205E1EB3057100DB2837 /* SPWebVCDemo.m */,
-				E124205F1EB3057100DB2837 /* SPWebView.h */,
-				E12420601EB3057100DB2837 /* SPWebView.m */,
-				E12420611EB3057100DB2837 /* SPWebViewController.h */,
-				E12420621EB3057100DB2837 /* SPWebViewController.m */,
+				1E1769AD2472B77E0082E7F4 /* LSPWebView.h */,
+				1E1769AC2472B77E0082E7F4 /* LSPWebView.m */,
+				1E1769AA2472B77E0082E7F4 /* LSPWebViewController.h */,
+				1E1769AB2472B77E0082E7F4 /* LSPWebViewController.m */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -178,8 +188,7 @@
 				E1025B8C1EB0DB21007CF292 /* Sources */,
 				E1025B8D1EB0DB21007CF292 /* Frameworks */,
 				E1025B8E1EB0DB21007CF292 /* Resources */,
-				5B3531B110D380E38A297F28 /* [CP] Embed Pods Frameworks */,
-				308A5F32F8DDF8C6A1A6D0D6 /* [CP] Copy Pods Resources */,
+				856E89A0160F371E803FCEDA /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -211,6 +220,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -241,34 +251,22 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		308A5F32F8DDF8C6A1A6D0D6 /* [CP] Copy Pods Resources */ = {
+		856E89A0160F371E803FCEDA /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SPWebView/Pods-SPWebView-resources.sh",
+				"${PODS_ROOT}/SPCategory/SPCategory/Resource/SPCategory.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/SPCategory.bundle",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SPWebView/Pods-SPWebView-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		5B3531B110D380E38A297F28 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SPWebView/Pods-SPWebView-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SPWebView/Pods-SPWebView-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		B463B2EFC3A8FA514BBC5865 /* [CP] Check Pods Manifest.lock */ = {
@@ -277,13 +275,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SPWebView-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -293,14 +294,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E12420701EB3057100DB2837 /* SPWebViewController.m in Sources */,
+				1E1769AF2472B77E0082E7F4 /* LSPWebView.m in Sources */,
 				E12420751EB3249B00DB2837 /* README.md in Sources */,
+				1E4F8566248932130001B979 /* UIBarButtonItem+JItem.m in Sources */,
 				E124206D1EB3057100DB2837 /* SPWebListDemo.m in Sources */,
 				E1025B981EB0DB21007CF292 /* AppDelegate.m in Sources */,
-				E124206F1EB3057100DB2837 /* SPWebView.m in Sources */,
 				E1377B2D1EB1E18E008BC1A1 /* HomeVC.m in Sources */,
 				E124206E1EB3057100DB2837 /* SPWebVCDemo.m in Sources */,
 				E1025B951EB0DB21007CF292 /* main.m in Sources */,
+				1E1769AE2472B77E0082E7F4 /* LSPWebViewController.m in Sources */,
+				1E4F856324892CA10001B979 /* SPBundleTools.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

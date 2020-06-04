@@ -28,14 +28,15 @@
 - (void)viewDidLoad{
     [super viewDidLoad];
     
-    NSBundle *bundle = [SPWebView bundleForName:@"SPWebView"];
-    NSString *url =  [NSBundle pathForResource:@"sppointIcon@2x" ofType:@"png" inDirectory:bundle.bundlePath];
-    
-    UIImage *image = [[UIImage imageWithContentsOfFile:url] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+//    NSBundle *bundle = [SPWebView bundleForName:@"SPWebView"];
+//    NSString *url =  [NSBundle pathForResource:@"sppointIcon@2x" ofType:@"png" inDirectory:bundle.bundlePath];
+//
+//    UIImage *image = [[UIImage imageWithContentsOfFile:url] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
 
     UIButton *callJS = [UIButton buttonWithType:UIButtonTypeCustom];
     callJS.frame = CGRectMake(0, 0, 22, 44);
-    [callJS setImage:image forState:UIControlStateNormal];
+//    [callJS setImage:image forState:UIControlStateNormal];
+    [callJS setTitle:@"调用JS方法" forState:UIControlStateNormal];
     [callJS addTarget:self action:@selector(callJS) forControlEvents:UIControlEventTouchUpInside];
     UIBarButtonItem *right = [[UIBarButtonItem alloc]initWithCustomView:callJS];
     self.navigationItem.rightBarButtonItem = right;

@@ -1,16 +1,38 @@
 PODS:
-  - NJKWebViewProgress (0.2.3):
-    - NJKWebViewProgress/Core (= 0.2.3)
-    - NJKWebViewProgress/ProgressView (= 0.2.3)
-  - NJKWebViewProgress/Core (0.2.3)
-  - NJKWebViewProgress/ProgressView (0.2.3)
+  - MBProgressHUD (1.0.0)
+  - MJExtension (3.2.1)
+  - SafeData (1.0.3)
+  - SPCategory (0.4.4):
+    - MBProgressHUD (= 1.0.0)
+    - SafeData
+    - SPMacro
+  - SPFastPush (1.0.0)
+  - SPMacro (0.3.7)
 
 DEPENDENCIES:
-  - NJKWebViewProgress (= 0.2.3)
+  - MJExtension
+  - SafeData
+  - SPCategory
+  - SPFastPush
+  - SPMacro
+
+SPEC REPOS:
+  trunk:
+    - MBProgressHUD
+    - MJExtension
+    - SafeData
+    - SPCategory
+    - SPFastPush
+    - SPMacro
 
 SPEC CHECKSUMS:
-  NJKWebViewProgress: f481fd424cb5ecc27eacae11b5397db92fba9a4d
+  MBProgressHUD: 4890f671c94e8a0f3cf959aa731e9de2f036d71a
+  MJExtension: 635f2c663dcb1bf76fa4b715b2570a5710aec545
+  SafeData: 1b1f190e2d756e2face4a13046ccd698d70407bd
+  SPCategory: c8c6b727a957924962e512c0f44c33dcb0a91476
+  SPFastPush: da1d277f10bb9636adce4e74a425400eb23438d2
+  SPMacro: e6148a12ff383dc3b73b4edb45ba116371b562e8
 
-PODFILE CHECKSUM: 065e3e74bc82e615b80b86ac773640350a5d9d69
+PODFILE CHECKSUM: 0c8a32a05fd8b5a615b7c9df72d1010919c29ebe
 
-COCOAPODS: 1.1.0
+COCOAPODS: 1.9.1

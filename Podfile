@@ -6,7 +6,11 @@
 platform :ios, '8.0'
 
 target 'SPWebView' do
-
-pod 'NJKWebViewProgress',           '0.2.3'
+    
+pod 'SPMacro'
+pod 'SPFastPush'
+pod 'MJExtension'
+pod 'SafeData'
+pod 'SPCategory'
 
 end
